@@ -17,7 +17,7 @@ public class Conversor {
 		return result.reverse().toString();
 	}
 
-	public static String binarioToDecimal(String numberToConvert) {
+	public static int binarioToDecimal(String numberToConvert) {
 
 		double decimalTotal = 0;
 		int base = 2;
@@ -35,8 +35,10 @@ public class Conversor {
 			}
 			expoente++;
 		}
-
-		return String.valueOf(decimalTotal);
+		
+		int resultToInt = (int)decimalTotal;
+		
+		return resultToInt;
 	}
 
 	public static String decimalToHexa(int numberToConvert) {

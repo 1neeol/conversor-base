@@ -20,7 +20,7 @@ public class Executor {
 
 			if (isValid == true) {
 
-				String result = Conversor.binarioToDecimal(number);
+				String result = String.valueOf(Conversor.binarioToDecimal(number));
 
 				JOptionPane.showMessageDialog(null, "O valor decimal do binario " + number + " é:" + result);
 
@@ -33,9 +33,9 @@ public class Executor {
 			boolean isValid = Validador.isBinario(number);
 
 			if (isValid == true) {
-				String numberDecimal = Conversor.binarioToDecimal(number);
+				int numberDecimal = Conversor.binarioToDecimal(number);
 
-				String result = Conversor.decimalToHexa(Integer.parseInt(numberDecimal));
+				String result = Conversor.decimalToHexa(numberDecimal);
 
 				JOptionPane.showMessageDialog(null,
 						"O valor em hexadecimal para o BINÁRIO " + number + " é : " + result);
