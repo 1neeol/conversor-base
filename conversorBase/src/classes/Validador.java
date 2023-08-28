@@ -25,7 +25,7 @@ public class Validador {
 	public static boolean isDecimal(String numberToValidate) {
 
 		boolean retorno = false;
-		
+
 		boolean isNotNumber = false;
 
 		for (int i = numberToValidate.length(); i > 0; i--) {
@@ -33,14 +33,14 @@ public class Validador {
 
 			if (Character.digit(ch, 10) >= 0 && Character.digit(ch, 10) <= 9) {
 				retorno = true;
-				
+
 				break;
-			}else {
+			} else {
 				isNotNumber = true;
 			}
-			
+
 		}
-		if(isNotNumber == true) {
+		if (isNotNumber == true) {
 			retorno = false;
 		}
 
@@ -57,13 +57,14 @@ public class Validador {
 		for (int i = numberToValidate.length(); i > 0; i--) {
 			char charToValidate = numberToValidate.charAt(i - 1);
 
+			char charToValidateLowerCase = Character.toLowerCase(charToValidate);
+
 			while (retorno == true) {
 				boolean validEquals = false;
 				for (int x = dados.length; x > 0; x--) {
 					char charValid = dados[x - 1];
-					System.out.println(charValid);
 
-					if (charToValidate == charValid) {
+					if (charToValidateLowerCase == charValid) {
 						validEquals = true;
 						break;
 					}

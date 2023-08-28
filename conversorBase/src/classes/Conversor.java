@@ -38,7 +38,6 @@ public class Conversor {
 
 		return String.valueOf(decimalTotal);
 	}
-	
 
 	public static String decimalToHexa(int numberToConvert) {
 
@@ -72,12 +71,13 @@ public class Conversor {
 
 			int division = numberToConvert / 16;
 			numberToConvert = division;
-		}
 
+		}
 		return result.reverse().toString();
+
 	}
 
-	public static String hexaToDecimal(String numberToConvert) {
+	public static int hexaToDecimal(String numberToConvert) {
 
 		double decimalTotal = 0;
 		int base = 16;
@@ -87,7 +87,9 @@ public class Conversor {
 			double calc = Math.pow(base, expoente);
 			char ch = numberToConvert.charAt(i - 1);
 
-			switch (ch) {
+			char chUp = Character.toUpperCase(ch);
+
+			switch (chUp) {
 			case 'A':
 				decimalTotal = (calc * 10) + decimalTotal;
 				break;
@@ -112,6 +114,8 @@ public class Conversor {
 			expoente++;
 		}
 
-		return String.valueOf(decimalTotal);
+		int resultToInt = (int) decimalTotal;
+
+		return resultToInt;
 	}
 }
