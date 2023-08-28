@@ -79,9 +79,9 @@ public class Executor {
 
 			if (isValid == true) {
 
-				String numberDecimal = String.valueOf(Conversor.hexaToDecimal(number));
+				int numberDecimal = Conversor.hexaToDecimal(number);
 
-				String result = String.valueOf(Conversor.hexaToDecimal(numberDecimal));
+				String result = Conversor.decimalToBinarial(numberDecimal);
 
 				JOptionPane.showMessageDialog(null,
 						"O valor em binário para o hexadecimal " + number + " é : " + result);
